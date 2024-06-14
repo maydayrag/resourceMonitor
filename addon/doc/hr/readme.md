@@ -8,7 +8,7 @@ i druge informacije o korištenju resursa.
 
 # Prečaci
 
-All commands support speech on demand mode (NVDA 2024.1 and later).
+Sve naredbe podržavaju govor na zahtjev (NVDA 2024.1 i novije verzije).
 
 * NVDA+šift+E: Prikazuje korištenje ram memorije, prosječno opterećenje
   procesora i informacije o stanju baterije, ako su dostupne.
@@ -52,26 +52,26 @@ informacije o sustavu Windows. Važno je znati i sljedeće:
 Napomena o licenci: ovaj dodatak koristi Psutil, licenciran pod BSD licencom
 s 3 klauzule koja je kompatibilna s GNU Općom javnom licencom.
 
-## Version 24.05
+## Verzija 24.05
 
-* NVDA 2024.1 or later is required.
+* Zahtijeva NVDA 2024.1 ili noviju verziju.
 * NVDA will recognize wireless networks with WPA3 authentication methods
-  such as shared authentication of equals (SAE).
+  such as simultaneous authentication of equals (SAE).
 
-## Version 24.04
+## Verzija 24.04
 
-* Updated psutil dependency to 5.9.8.
+* Aktualizirana je psutil ovisnost na 5.9.8.
 * Added support for speech on demand mode so resource information can be
   announced in this mode.
 
-## Version 23.11
+## Verzija 23.11
 
 * Downgraded psutil dependency to 5.9.4 due to problems with memory usage
   announcements.
 
-## Version 23.10
+## Verzija 23.10
 
-* Updated psutil dependency to 5.9.5.
+* Aktualizirana je psutil ovisnost na 5.9.5.
 
 ## Verzija 23.09
 

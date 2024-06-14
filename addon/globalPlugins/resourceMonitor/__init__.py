@@ -3,6 +3,7 @@
 # Copyright 2013-2024 Alex Hall, Joseph Lee, Kefas Lungu, Beqa Gozalishvili, Tuukka Ojala, Ethin Probst,
 # released under GPL.
 # This add-on uses Psutil, licensed under 3-Clause BSD License which is compatible with GPL.
+# psutil is included in NVDA 2024.2 and later.
 
 import functools
 import os.path
@@ -11,17 +12,13 @@ import winreg
 import winsound
 from ctypes import addressof, byref, POINTER, wintypes
 from datetime import datetime
-from typing import List, Tuple, Union, Any
+from typing import Any
 import api
 import globalPluginHandler
 import scriptHandler
 import ui
 import winVersion
-# NVDA 2024.2 includes psutil.
-try:
-	import psutil
-except ModuleNotFoundError:
-	from . import psutil
+import psutil
 # Windows Server systems prior to Server 2025 do not include wlanapi.dll.
 try:
 	from . import wlanapi
@@ -158,7 +155,7 @@ si = [
 ]
 
 
-def size(bytes: int, system: List[Tuple[float, Any]] = traditional) -> str:
+def size(bytes: int, system: list[tuple[float, Any]] = traditional) -> str:
 	for factor, suffix in system:
 		if float(bytes) >= float(factor):
 			break
@@ -172,7 +169,7 @@ def size(bytes: int, system: List[Tuple[float, Any]] = traditional) -> str:
 	return "{:.2F}{}".format(float(amount), suffix)
 
 
-def tryTrunk(n: float) -> Union[int, float]:
+def tryTrunk(n: float) -> int | float:
 	# This method basically removes decimal zeros, so 5.0 will just be 5.
 	# If the number ends in anything other than a 0,
 	# nothing happens (if the trunkated number is not equal to the decimal).
